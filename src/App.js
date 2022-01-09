@@ -10,11 +10,13 @@ function App() {
     //BEM
     <Router>
       <div className="app">
-        <Header exact path="/login" element={((<Home />), (<Checkout />))} />
         <Routes>
           <Route exact path="/login" element={<Login />} />
-
+        </Routes>
+        <Header exact path="/" element={((<Home />), (<Checkout />))} />
+        <Routes>
           <Route exact path="/checkout" element={<Checkout />} />
+
           <Route exact path="/" element={<Home />} />
         </Routes>
       </div>
