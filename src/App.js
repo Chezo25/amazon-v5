@@ -4,9 +4,12 @@ import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Payment from "./Payment";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -41,6 +44,8 @@ function App() {
         <Header exact path="/" element={((<Home />), (<Checkout />))} />
         <Routes>
           <Route exact path="/checkout" element={<Checkout />} />
+
+          <Route exact path="/payment" element={<Payment />} />
 
           <Route exact path="/" element={<Home />} />
         </Routes>
